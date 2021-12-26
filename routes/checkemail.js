@@ -1,10 +1,8 @@
-module.exports = app => {
-    var User = require('../controller/user');
-    var router = require('express').Router();
+module.exports = (app) => {
+  var User = require("../controller/user");
+  var router = require("express").Router();
 
+  router.get("/:email", User.checkemail);
 
-    router.get('/:email', User.checkemail);
-
-
-    app.use("/checkemail", router);
-}
+  app.use("/checkemail", router);
+};

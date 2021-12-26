@@ -24,8 +24,12 @@ app.post("/payment", async (req, res) => {
   res.json({ client_secret: paymentIntent["client_secret"] });
 });
 
-require("./routes/login")(app);
-require("./routes/user")(app);
+app.get("/", (req, res) => {
+  res.send("Hello, Welcome to travel");
+});
+
+require("./routes/Login")(app);
+require("./routes/User")(app);
 require("./routes/Tag")(app);
 require("./routes/Quocgia")(app);
 require("./routes/Tintuc")(app);
@@ -41,10 +45,9 @@ require("./routes/Hoadon")(app);
 require("./routes/TintucTag")(app);
 require("./routes/Role")(app);
 require("./routes/Lienhe")(app);
-require("./routes/Camnangdulich")(app);
 require("./routes/UserRole")(app);
-require("./routes/Checkuser")(app);
-require("./routes/checkemail")(app);
+require("./routes/CheckUser")(app);
+require("./routes/CheckEmail")(app);
 require("./routes/DichvuTour")(app);
 require("./routes/TourLoaitour")(app);
 require("./routes/TourNgaydi")(app);

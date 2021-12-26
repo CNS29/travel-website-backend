@@ -1,7 +1,5 @@
-'use strict';
-const {
-  Model
-} = require('sequelize');
+"use strict";
+const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
   class Quocgia extends Model {
     /**
@@ -11,17 +9,19 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       Quocgia.hasMany(models.Diadiem, {
-        foreignKey: "quocgiaId"
-      })
+        foreignKey: "quocgiaId",
+      });
     }
-  };
-  Quocgia.init({
-    name: DataTypes.STRING,
-    status: DataTypes.INTEGER
-  }, {
-    sequelize,
-    modelName: 'Quocgia',
-    tableName: 'Quocgias'
-  });
+  }
+  Quocgia.init(
+    {
+      name: DataTypes.STRING,
+    },
+    {
+      sequelize,
+      modelName: "Quocgia",
+      tableName: "Quocgias",
+    }
+  );
   return Quocgia;
 };

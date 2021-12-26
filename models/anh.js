@@ -15,7 +15,6 @@ module.exports = (sequelize, DataTypes) => {
     {
       link: DataTypes.STRING(1000),
       tenanh: DataTypes.STRING(1000),
-      status: DataTypes.INTEGER,
       banner: DataTypes.INTEGER,
       tourId: {
         type: DataTypes.INTEGER,

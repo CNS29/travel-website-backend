@@ -1,7 +1,5 @@
-'use strict';
-const {
-  Model
-} = require('sequelize');
+"use strict";
+const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
   class Dichvu extends Model {
     /**
@@ -11,19 +9,21 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       Dichvu.belongsToMany(models.Tour, {
-        through: "DichvuTours"
-      })
+        through: "DichvuTours",
+      });
     }
-  };
-  Dichvu.init({
-    name: DataTypes.STRING,
-    mota: DataTypes.STRING,
-    icon: DataTypes.STRING,
-    loadhome: DataTypes.INTEGER,
-    status: DataTypes.INTEGER
-  }, {
-    sequelize,
-    modelName: 'Dichvu',
-  });
+  }
+  Dichvu.init(
+    {
+      name: DataTypes.STRING,
+      mota: DataTypes.STRING,
+      icon: DataTypes.STRING,
+      status: DataTypes.INTEGER,
+    },
+    {
+      sequelize,
+      modelName: "Dichvu",
+    }
+  );
   return Dichvu;
 };

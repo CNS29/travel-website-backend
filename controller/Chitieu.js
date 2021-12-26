@@ -9,7 +9,7 @@ exports.create = (req, res) => {
     });
 };
 exports.findall = (req, res) => {
-  Chitieu.findAll({ order: [["id", "DESC"]] })
+  Chitieu.findAll({ order: [["id", "ASC"]] })
     .then((data) => {
       res.json({ data: data });
     })
